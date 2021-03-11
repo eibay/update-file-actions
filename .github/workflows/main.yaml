@@ -11,6 +11,8 @@ jobs:
       with:
         file-path: 'infrastructure'
         file-name: 'values.yml'
+      run: |
+        pwd
 
     # Use the output from the `hello` step
     - name: Get the full path
