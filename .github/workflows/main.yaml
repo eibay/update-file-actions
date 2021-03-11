@@ -5,6 +5,11 @@ on: [push]
 jobs:
   hello_world_job:
     runs-on: ubuntu-latest
+    defaults:
+      run: 
+        shell: bash
+        working-directory: /infrastructure
+
     name: A job to get filename and path
     steps:
     - name: Get full path step
@@ -15,8 +20,8 @@ jobs:
         file-name: 'values.yml'
     
     - name: Log current workspace
-      run: |
-        echo "Workspaces: $GITHUB_WORKSPACE"
+      run: echo $GITHUB_WORKSPACE
+
 
     # Use the output from the `hello` step
     - name: Get the full path
