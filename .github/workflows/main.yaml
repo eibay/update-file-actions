@@ -7,11 +7,11 @@ jobs:
     steps:
     - name: Get full path step
       id: get-path
-      uses: actions/hello-world-javascript-action@v1.1
+      uses: actions/update-file-actions@v1.1
       with:
         file-path: '/infrastructure/resource'
         file-name: 'values.yml'
 
     # Use the output from the `hello` step
-    - name: Get the output time
-      run: echo "The time was ${{ steps.get-path.outputs.full-path }}"
+    - name: Get the full path
+      run: echo "The full path was ${{ steps.get-path.outputs.full-path }}"
