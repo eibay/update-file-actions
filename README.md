@@ -10,12 +10,13 @@ This action prints "Hello World" or "Hello" + the name of a person to greet to t
 
 ## Outputs
 
-### `time`
+### `full path`
 
-The time we greeted you.
+The full path is...
 
 ## Example usage
 
-uses: actions/hello-world-javascript-action@v1.1
+uses: eibay/update-file-actions@main
 with:
-  who-to-greet: 'Mona the Octocat'
+  filename: 'filename'
+  filepath: 'infrastructure'
