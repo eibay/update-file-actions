@@ -9,7 +9,7 @@ inputs:
   file-name: # input filename
     description: 'Set the filename'
     required: true
-    default: '.yml'
+    default: 'example.yml'
 
 outputs:
   fullPath: # full path id

@@ -7,7 +7,7 @@ jobs:
     steps:
     - name: Get full path step
       id: get-path
-      uses: eibay/update-file-actions@v1.1
+      uses: eibay/update-file-actions@main
       with:
         file-path: '/infrastructure/resource'
         file-name: 'values.yml'
