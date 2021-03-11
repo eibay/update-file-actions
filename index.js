@@ -1,5 +1,6 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
+const yaml = require('js-yaml');
 
 try {
   // `who-to-greet` input defined in action metadata file
@@ -14,9 +15,18 @@ try {
 
   const filePath = core.getInput('file-path');
   const fileName = core.getInput('file-name');
-  const fullPath = filePath + "/" + fileName;
+  const fullPath = "./" + filePath + "/" + fileName;
   core.setOutput("full-path", fullPath);
   console.log('The full path:', fullPath);
+
+  let doc = yaml.safeLoad(fs.readFileSync(fullPath, 'utf8'));
+  fs.writeFile(fullPath, yaml.safeDump(doc), (err) => {
+      if (err) {
+          console.log(err);
+      }
+      console.log('file reading success...')
+  });
+
 } catch (error) {
   core.setFailed(error.message);
 }

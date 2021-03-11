@@ -9,7 +9,7 @@ jobs:
       id: get-path
       uses: eibay/update-file-actions@main
       with:
-        file-path: '/infrastructure/resource'
+        file-path: 'infrastructure'
         file-name: 'values.yml'
 
     # Use the output from the `hello` step
