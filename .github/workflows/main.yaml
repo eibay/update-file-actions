@@ -11,6 +11,8 @@ jobs:
       with:
         file-path: 'infrastructure'
         file-name: 'values.yml'
+    
+    - name: Log current workspace
       run: |
         echo "Workspaces: $GITHUB_WORKSPACE"
 
