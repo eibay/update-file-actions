@@ -12,7 +12,7 @@ jobs:
         file-path: 'infrastructure'
         file-name: 'values.yml'
       run: |
-        echo ${{pwd}}
+        echo $GITHUB_WORKSPACE
 
     # Use the output from the `hello` step
     - name: Get the full path
