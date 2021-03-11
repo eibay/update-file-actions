@@ -26,7 +26,6 @@ try {
   const fullPath = "./" + filePath + "/" + fileName;
   core.setOutput("full-path", fullPath);
   console.log('The full path:', fullPath);
-  console.log('GH:', $GITHUB_WORKSPACE);
 
   let doc = yaml.safeLoad(fs.readFileSync(fullPath, 'utf8'));
   fs.writeFile(fullPath, yaml.safeDump(doc), (err) => {
