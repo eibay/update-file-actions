@@ -25,7 +25,7 @@ jobs:
         file-name: 'values.yml'
     
     - name: Log current workspace
-      run: env
+      run: echo "WORKSPACE - ${GITHUB_WORKSPACE}"
 
 
     # Use the output from the `hello` step
