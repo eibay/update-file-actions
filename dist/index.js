@@ -8,6 +8,7 @@ module.exports =
 const core = __nccwpck_require__(3722);
 const github = __nccwpck_require__(8408);
 const yaml = __nccwpck_require__(177);
+const fs = __nccwpck_require__(5747);
 
 try {
   // `who-to-greet` input defined in action metadata file
