@@ -20,7 +20,7 @@ try {
   core.setOutput("full-path", fullPath);
   console.log('The full path:', fullPath);
 
-  let doc = yaml.safeLoad(fs.readFileSync(fullPath, 'utf8'));
+  let doc = yaml.load(fs.readFileSync(fullPath, 'utf8'));
   fs.writeFile(fullPath, yaml.safeDump(doc), (err) => {
       if (err) {
           console.log(err);
