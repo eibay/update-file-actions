@@ -13,7 +13,6 @@ const fs = __nccwpck_require__(5747);
 try {
   // `who-to-greet` input defined in action metadata file
   const nameToGreet = core.getInput('who-to-greet');
-  console.log(`Hello ${nameToGreet}!`);
   const time = (new Date()).toTimeString();
   core.setOutput("time", time);
 
@@ -27,7 +26,7 @@ try {
   core.setOutput("full-path", fullPath);
   console.log('The full path:', fullPath);
 
-  let doc = yaml.safeLoad(fs.readFileSync(fullPath, 'utf8'));
+  let doc = yaml.load(fs.readFileSync(fullPath, 'utf8'));
   fs.writeFile(fullPath, yaml.safeDump(doc), (err) => {
       if (err) {
           console.log(err);
