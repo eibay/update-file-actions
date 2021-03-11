@@ -3,13 +3,15 @@ on: [push]
 jobs:
   hello_world_job:
     runs-on: ubuntu-latest
-    name: A job to say hello
+    name: A job to get filename and path
     steps:
-    - name: Hello world action step
-      id: hello
+    - name: Get full path step
+      id: get-path
       uses: actions/hello-world-javascript-action@v1.1
       with:
-        who-to-greet: 'Mona the Octocat'
+        file-path: '/infrastructure/resource'
+        file-name: 'values.yml'
+
     # Use the output from the `hello` step
     - name: Get the output time
-      run: echo "The time was ${{ steps.hello.outputs.time }}"
+      run: echo "The time was ${{ steps.get-path.outputs.full-path }}"

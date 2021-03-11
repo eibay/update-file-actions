@@ -7,9 +7,16 @@ try {
   console.log(`Hello ${nameToGreet}!`);
   const time = (new Date()).toTimeString();
   core.setOutput("time", time);
+
   // Get the JSON webhook payload for the event that triggered the workflow
   const payload = JSON.stringify(github.context.payload, undefined, 2)
   console.log(`The event payload: ${payload}`);
+
+  const filePath = core.getInput('file-path');
+  const fileName = core.getInput('file-name');
+
+  const fullPath = core.setOutput("full-path", filepath + "/" + filename);
+  console.log('The full path:', fullPath);
 } catch (error) {
   core.setFailed(error.message);
 }
