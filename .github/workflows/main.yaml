@@ -25,7 +25,10 @@ jobs:
         file-name: 'values.yml'
     
     - name: Log current workspace
-      run: echo "WORKSPACE - ${{github.workspace}}"
+      run: |
+        echo "WORKSPACE - ${{github.workspace}}"
+        echo "current version: (sed -n '1p' - ${{github.workspace}}/infrastructure/values.yml)"
+
 
 
     # Use the output from the `hello` step
