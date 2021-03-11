@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/eibay/update-file-actions/issues"
   },
-  "homepage": "https://github.com/eibay/update-file-actions#readme"
+  "homepage": "https://github.com/eibay/update-file-actions#readme",
+  "dependencies": {
+    "@actions/core": "^1.2.6",
+    "@actions/github": "^4.0.0"
+  }
 }
