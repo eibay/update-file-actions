@@ -14,8 +14,8 @@ try {
 
   const filePath = core.getInput('file-path');
   const fileName = core.getInput('file-name');
-
-  const fullPath = core.setOutput("full-path", filePath + "/" + fileName);
+  const fullPath = filePath + "/" + fileName;
+  core.setOutput("full-path", fullPath);
   console.log('The full path:', fullPath);
 } catch (error) {
   core.setFailed(error.message);
