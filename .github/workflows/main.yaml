@@ -12,7 +12,7 @@ jobs:
         file-path: 'infrastructure'
         file-name: 'values.yml'
       run: |
-        echo "Workspace: $GITHUB_WORKSPACE"
+        echo "Workspaces: $GITHUB_WORKSPACE"
 
     # Use the output from the `hello` step
     - name: Get the full path
