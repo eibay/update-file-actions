@@ -20,7 +20,7 @@ try {
   console.log('The full path:', fullPath);
 
   let doc = yaml.load(fs.readFileSync(fullPath, 'utf8'));
-  fs.writeFile(fullPath, yaml.safeDump(doc), (err) => {
+  fs.writeFile(fullPath, yaml.dump(doc), (err) => {
       if (err) {
           console.log(err);
       }
