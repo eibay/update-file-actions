@@ -1,13 +1,19 @@
 name: 'Hello World'
 description: 'Greet someone and record the time'
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
+  file-path:  # path of the file 
+    description: 'Set the file path directory'
     required: true
-    default: 'World'
+    default: '/'
+
+  file-name: # input filename
+    description: 'Set the filename'
+    required: true
+    default: '.yml'
+
 outputs:
-  time: # id of output
-    description: 'The time we greeted you'
+  fullPath: # full path id
+    description: 'Output full file path'
 runs:
   using: 'node12'
   main: 'dist/index.js'
